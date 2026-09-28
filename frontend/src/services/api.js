@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://leetcodemonitorapp.onrender.com/api',
   timeout: 15000,
   headers: {
     'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ api.interceptors.response.use(
         message = 'An unexpected server error occurred. Please try again.';
       }
     } else if (error.request) {
-      message = 'Unable to connect to the server. Please check your network and ensure Spring Boot is running on port 8080.';
+      message = 'Unable to connect to the backend server (https://leetcodemonitorapp.onrender.com). Please check your internet connection or verify backend status.';
     }
     
     return Promise.reject(new Error(message));

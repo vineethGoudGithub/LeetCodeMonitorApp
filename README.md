@@ -64,7 +64,7 @@ PORT=8080
 
 # Frontend Port
 FRONTEND_PORT=5173
-VITE_API_BASE_URL=/api
+VITE_API_BASE_URL=https://leetcodemonitorapp.onrender.com/api
 ```
 
 ---
@@ -78,7 +78,7 @@ cd backend
 mvn clean compile
 mvn spring-boot:run
 ```
-Backend runs at: **`http://localhost:8080`**
+Backend runs at: **`http://localhost:8080`** (or Live Render Backend: **`https://leetcodemonitorapp.onrender.com`**)
 
 ### 2. Frontend (React + Vite)
 

@@ -8,8 +8,9 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: process.env.VITE_BACKEND_URL || 'https://leetcodemonitorapp.onrender.com',
         changeOrigin: true,
+        secure: false,
       },
     },
   },
